@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1001",
+    "title": "Login Issues - Can't Access Account",
+    "description": "Customer is unable to log in to their account. They've tried resetting their password multiple times but still encounter a server error.",
+    "customer": "John Smith",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2025-01-12"
+  },
+  {
+    "id": "1002",
+    "title": "Payment Gateway Timeout",
+    "description": "Transactions are failing intermittently during the checkout process. Several users reported timeouts after entering card details.",
+    "customer": "Sarah Connor",
+    "priority": "Critical",
+    "status": "In-progress",
+    "createdAt": "2025-01-12"
+  },
+  {
+    "id": "1003",
+    "title": "Profile Image Upload Failed",
+    "description": "Uploading a PNG file larger than 2MB causes the application to crash without an error message.",
+    "customer": "Mike Ross",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2025-01-11"
+  },
+  {
+    "id": "1004",
+    "title": "Dashboard Analytics Not Loading",
+    "description": "The main graph on the dashboard is showing a blank state for the 'Yearly Overview' tab.",
+    "customer": "Jessica Pearson",
+    "priority": "High",
+    "status": "In-progress",
+    "createdAt": "2025-01-11"
+  },
+  {
+    "id": "1005",
+    "title": "Typo in Email Footer",
+    "description": "The unsubscribe link in the marketing newsletter has a typo: 'Unsubscirbe'.",
+    "customer": "Louis Litt",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2025-01-10"
+  },
+  {
+    "id": "1006",
+    "title": "Mobile App Sync Issue",
+    "description": "Data added on the web platform is taking over an hour to reflect on the iOS mobile application.",
+    "customer": "Harvey Specter",
+    "priority": "Medium",
+    "status": "In-progress",
+    "createdAt": "2025-01-10"
+  },
+  {
+    "id": "1007",
+    "title": "Export Button Unresponsive",
+    "description": "Clicking the 'Export to CSV' button triggers no action in the Reports section.",
+    "customer": "Rachel Zane",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2025-01-09"
+  },
+  {
+    "id": "1008",
+    "title": "Dark Mode Contrast Issue",
+    "description": "Text in the sidebar becomes unreadable when Dark Mode is enabled due to low contrast gray-on-black.",
+    "customer": "Donna Paulsen",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2025-01-09"
+  },
+  {
+    "id": "1009",
+    "title": "API Key Permissions",
+    "description": "The read-only API key is incorrectly allowing write access to the user settings endpoint.",
+    "customer": "Katrina Bennett",
+    "priority": "Critical",
+    "status": "In-progress",
+    "createdAt": "2025-01-08"
+  },
+  {
+    "id": "1010",
+    "title": "Search Bar Returns Zero Results",
+    "description": "Searching for existing product names yields 'No results found' unless the exact case is used.",
+    "customer": "Alex Williams",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2025-01-08"
+  },
+  {
+    "id": "1011",
+    "title": "Double Billing on Renewal",
+    "description": "Customer was charged twice for the annual subscription renewal on January 1st.",
+    "customer": "Samantha Wheeler",
+    "priority": "High",
+    "status": "In-progress",
+    "createdAt": "2025-01-07"
+  },
+  {
+    "id": "1012",
+    "title": "Notification Badge Stuck",
+    "description": "The red notification badge persists even after all messages have been read.",
+    "customer": "Robert Zane",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2025-01-07"
+  }
+]

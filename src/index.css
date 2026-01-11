@@ -1,2 +1,32 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.card-vec {
+  position: relative;
+  width: 100%;
+  height: 11rem;
+  margin: 0 auto;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.bg-img-left {
+ 
+  background-image: url("/left.png"), linear-gradient(to right, #7c3aed, #8b5cf6);
+  background-size: cover, 100% 100%;
+  background-position: left, center;
+  /* background-repeat: no-repeat; */
+}
+
+.bg-img-right {
+  
+  background-image: url("/right.png"),linear-gradient(to right, #43A047, #66BB6A);
+  background-size: cover, 100% 100%;
+  background-position: right, center;
+  /* background-repeat: no-repeat; */
+}
