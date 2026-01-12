@@ -1,24 +1,31 @@
-import React from 'react'
+import React, { use } from 'react'
 
-const Tickets = () => {
+const Tickets = ({ticektPromise}) => {
+    const ticketInfo = use(ticektPromise)
+      console.log(ticketInfo)
   return (
-    <div className="border-2 rounded-sm p-4">
+<>
+{
+    ticketInfo.map(ticket =>  <div className="border-2 rounded-xl p-4 hover:cursor-pointer">
         <div className="flex items-center justify-between mb-4">
-            <h3>Login Issues - Can't Access Account</h3>
-            <button className='btn rounded-full bg-green-300 text-green-800'>Open</button>
+            <h3 className="font-bold">{ticket.title}</h3>
+            <button className='btn rounded-full bg-green-300 text-green-800'>{ticket.status}</button>
         </div>
-        <p>Customer is unable to log in to their account. They've tried resetting their password multiple times but still...</p>
+        <p className='text-gray-600'>{ticket.description}</p>
         <div className="flex justify-between items-center mt-4">
             <div className="flex justify-between items-center">
-                <p className='mr-3'>#1001</p>
-                <p>HIGH PRIORITY</p>
+                <p className='mr-3 text-gray-600'>#{ticket.id}</p>
+                <p className='text-red-600'>{ticket.priority}</p>
             </div>
             <div className="flex justify-between items-center">
-                <p className='mr-4'>John Smith</p>
-                <p>1/12/2025</p>
+                <p className='mr-5 text-gray-600'>{ticket.customer}</p>
+                <p className='text-gray-600 flex items-center'><img className='mr-2' src="/calendar.png" alt="" />{ticket.createdAt}</p>
             </div>
         </div>
-    </div>
+    </div>)
+}
+</>
+
   )
 }
 

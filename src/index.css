@@ -16,17 +16,39 @@
 }
 
 .bg-img-left {
- 
-  background-image: url("/left.png"), linear-gradient(to right, #7c3aed, #8b5cf6);
-  background-size: cover, 100% 100%;
-  background-position: left, center;
-  /* background-repeat: no-repeat; */
+  position: relative;
+  background-image: url("/vector1.png"), linear-gradient(to right, #7c3aed, #8b5cf6);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.bg-img-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/vector1.png");
+  background-position:left;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
+  pointer-events: none;
 }
 
 .bg-img-right {
   
-  background-image: url("/right.png"),linear-gradient(to right, #43A047, #66BB6A);
-  background-size: cover, 100% 100%;
-  background-position: right, center;
-  /* background-repeat: no-repeat; */
+  position: relative;
+  background-image: url("/vector1.png"), linear-gradient(to right, #12bd48, #4db94f);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.bg-img-right::after{
+
+    content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/vector1.png");
+  background-position:left;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
+  pointer-events: none;
 }

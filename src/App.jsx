@@ -1,8 +1,16 @@
+import { Suspense } from "react";
 import "./App.css";
 import MainCard from "./Components/MainCard/MainCard";
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 
-function App() {
+const ticketData = async () => {
+      const res = await fetch("/CardData.json")
+      return res.json()
+    }
+    function App() {   
+      const ticektPromise = ticketData()
+      
   return (
     <>
       <Navbar></Navbar>
@@ -28,7 +36,10 @@ function App() {
         </div>
       </div>
 
-        <MainCard></MainCard>
+        <Suspense fallback={<h1>I'm coming...</h1>}>
+          <MainCard ticektPromise={ticektPromise}></MainCard>
+        </Suspense>
+        <Footer></Footer>
      
     </>
   );
