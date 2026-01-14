@@ -1,18 +1,21 @@
 import React, { use } from 'react'
 
-const Tickets = ({ticektPromise}) => {
+const Tickets = ({ticektPromise, selectedCard, setSelectedCard, handleProgress}) => {
     const ticketInfo = use(ticektPromise)
-      console.log(ticketInfo)
+    
+    
+      
+    //   console.log(ticketInfo)
   return (
 <>
 {
-    ticketInfo.map(ticket =>  <div className="border-2 rounded-xl p-4 hover:cursor-pointer">
+    ticketInfo.map(ticket =>  <div onClick={()=> handleProgress(ticket.title)} className="border-2 rounded-xl p-4 hover:cursor-pointer">
         <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold">{ticket.title}</h3>
-            <button className='btn rounded-full bg-green-300 text-green-800'>{ticket.status}</button>
+            <button className={`btn rounded-full text-green-800 ${ ticket.status === "Open"? "bg-green-400":"bg-yellow-400" }`}>{ticket.status}</button>
         </div>
         <p className='text-gray-600'>{ticket.description}</p>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex flex-col md:flex-row gap-3 justify-between items-center mt-4">
             <div className="flex justify-between items-center">
                 <p className='mr-3 text-gray-600'>#{ticket.id}</p>
                 <p className='text-red-600'>{ticket.priority}</p>

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+
+
 .card-vec {
   position: relative;
   width: 100%;
