@@ -1,15 +1,19 @@
 import React, { use } from 'react'
 
-const Tickets = ({ticektPromise, selectedCard, setSelectedCard, handleProgress}) => {
+const Tickets = ({ticektPromise,progress, setProgress, setSelectedCard, selectedCard}) => {
     const ticketInfo = use(ticektPromise)
     
-    
+    const handleProgress = (card) =>{
+        setProgress(progress + 1)
+        setSelectedCard([...selectedCard, card])
+        console.log(card)
+    }
       
     //   console.log(ticketInfo)
   return (
 <>
 {
-    ticketInfo.map(ticket =>  <div onClick={()=> handleProgress(ticket.title)} className="border-2 rounded-xl p-4 hover:cursor-pointer">
+    ticketInfo.map(ticket =>  <div onClick={()=> handleProgress(ticket)} className="border-2 rounded-xl p-4 hover:cursor-pointer">
         <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold">{ticket.title}</h3>
             <button className={`btn rounded-full text-green-800 ${ ticket.status === "Open"? "bg-green-400":"bg-yellow-400" }`}>{ticket.status}</button>
