@@ -14,10 +14,11 @@ const ticektPromise = ticketData();
 function App() {
   const [progress, setProgress] = useState(0);
   const [selectedCard, setSelectedCard] = useState([]);
+  
+ 
 
-  // console.log(selectedCard)
 
-  // console.log(data)
+
   return (
     <>
       <Navbar></Navbar>
@@ -44,7 +45,7 @@ function App() {
       </div>
 
       <Suspense fallback={<h1>I'm coming...</h1>}>
-        <MainCard ticektPromise={ticektPromise} progress={progress} setProgress={setProgress} selectedCard={selectedCard} setSelectedCard={setSelectedCard}></MainCard>
+        <MainCard ticektPromise={ticektPromise} progress={progress} setProgress={setProgress} selectedCard={selectedCard} setSelectedCard={setSelectedCard} ></MainCard>
       </Suspense>
       <Footer></Footer>
     </>

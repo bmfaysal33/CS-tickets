@@ -1,19 +1,17 @@
 import React, { use } from 'react'
 
-const Tickets = ({ticektPromise,progress, setProgress, setSelectedCard, selectedCard}) => {
-    const ticketInfo = use(ticektPromise)
+const Tickets = ({progress, setProgress, setSelectedCard, selectedCard, ticket, removeCard}) => {
     
     const handleProgress = (card) =>{
         setProgress(progress + 1)
         setSelectedCard([...selectedCard, card])
-        console.log(card)
+        // console.log(card)
+        removeCard(ticket)
     }
-      
-    //   console.log(ticketInfo)
+
   return (
-<>
-{
-    ticketInfo.map(ticket =>  <div onClick={()=> handleProgress(ticket)} className="border-2 rounded-xl p-4 hover:cursor-pointer">
+
+<div onClick={()=>{ handleProgress(ticket)} } className="border-2 rounded-xl p-4 hover:cursor-pointer">
         <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold">{ticket.title}</h3>
             <button className={`btn rounded-full text-green-800 ${ ticket.status === "Open"? "bg-green-400":"bg-yellow-400" }`}>{ticket.status}</button>
@@ -29,9 +27,7 @@ const Tickets = ({ticektPromise,progress, setProgress, setSelectedCard, selected
                 <p className='text-gray-600 flex items-center'><img className='mr-2' src="/calendar.png" alt="" />{ticket.createdAt}</p>
             </div>
         </div>
-    </div>)
-}
-</>
+    </div>
 
   )
 }
