@@ -6,7 +6,6 @@ const Tickets = ({progress, setProgress, setSelectedCard, selectedCard, ticket, 
         setProgress(progress + 1)
         setSelectedCard([...selectedCard, card])
         // console.log(card)
-        removeCard(ticket)
     }
 
   return (
@@ -14,7 +13,7 @@ const Tickets = ({progress, setProgress, setSelectedCard, selectedCard, ticket, 
 <div onClick={()=>{ handleProgress(ticket)} } className="border-2 rounded-xl p-4 hover:cursor-pointer">
         <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold">{ticket.title}</h3>
-            <button className={`btn rounded-full text-green-800 ${ ticket.status === "Open"? "bg-green-400":"bg-yellow-400" }`}>{ticket.status}</button>
+            <button className={`btn rounded-full  ${ ticket.status === "Open"? "bg-green-300 text-green-800":"bg-yellow-300 text-yellow-800" }`}>{ticket.status}</button>
         </div>
         <p className='text-gray-600'>{ticket.description}</p>
         <div className="flex flex-col md:flex-row gap-3 justify-between items-center mt-4">

@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, use, useState } from "react";
 import "./App.css";
 import MainCard from "./Components/MainCard/MainCard";
 import Navbar from "./Components/Navbar/Navbar";
@@ -12,12 +12,9 @@ const ticketData = async () => {
 const ticektPromise = ticketData();
 
 function App() {
-  const [progress, setProgress] = useState(0);
-  const [selectedCard, setSelectedCard] = useState([]);
-  
+const [progress, setProgress] = useState(0);
+const [resolved, setResolved]= useState(0)
  
-
-
 
   return (
     <>
@@ -39,13 +36,13 @@ function App() {
           {/* Texts */}
           <div className="relative z-10 text-center text-white">
             <p>Resolved</p>
-            <h1 className="text-4xl font-semibold mt-1">0</h1>
+            <h1 className="text-4xl font-semibold mt-1">{resolved}</h1>
           </div>
         </div>
       </div>
 
       <Suspense fallback={<h1>I'm coming...</h1>}>
-        <MainCard ticektPromise={ticektPromise} progress={progress} setProgress={setProgress} selectedCard={selectedCard} setSelectedCard={setSelectedCard} ></MainCard>
+        <MainCard ticektPromise={ticektPromise} progress={progress} setProgress={setProgress} resolved={resolved} setResolved={setResolved}></MainCard>
       </Suspense>
       <Footer></Footer>
     </>
