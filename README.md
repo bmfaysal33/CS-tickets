@@ -1,6 +1,6 @@
 
 
-# 🔗 Live Link: **<a href="https://cs-tickets.surge.sh/" target="_blank"><strong>https://cs-tickets.surge.sh/</strong></a>**
+# 🔗 Live Link: <a href="https://cs-tickets.surge.sh/" target="_blank"><strong>https://cs-tickets.surge.sh/</strong></a>
  
 
 
