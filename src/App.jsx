@@ -3,6 +3,7 @@ import "./App.css";
 import MainCard from "./Components/MainCard/MainCard";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 const ticketData = async () => {
   const res = await fetch("/CardData.json");
@@ -12,9 +13,8 @@ const ticketData = async () => {
 const ticektPromise = ticketData();
 
 function App() {
-const [progress, setProgress] = useState(0);
-const [resolved, setResolved]= useState(0)
- 
+  const [progress, setProgress] = useState(0);
+  const [resolved, setResolved] = useState(0);
 
   return (
     <>
@@ -41,10 +41,18 @@ const [resolved, setResolved]= useState(0)
         </div>
       </div>
 
-      <Suspense fallback={<h1>I'm coming...</h1>}>
-        <MainCard ticektPromise={ticektPromise} progress={progress} setProgress={setProgress} resolved={resolved} setResolved={setResolved}></MainCard>
+      <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
+        <MainCard
+          ticektPromise={ticektPromise}
+          progress={progress}
+          setProgress={setProgress}
+          resolved={resolved}
+          setResolved={setResolved}
+        ></MainCard>
       </Suspense>
       <Footer></Footer>
+
+      <ToastContainer></ToastContainer>
     </>
   );
 }

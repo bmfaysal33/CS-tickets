@@ -1,7 +1,14 @@
 import React, { use, useState } from "react";
 import Tickets from "./Tickets";
+import { toast } from "react-toastify";
 
-const MainCard = ({ ticektPromise, progress, setProgress,resolved, setResolved }) => {
+const MainCard = ({
+  ticektPromise,
+  progress,
+  setProgress,
+  resolved,
+  setResolved,
+}) => {
   const ticketInfo = use(ticektPromise);
 
   const [tickets, setTickets] = useState(ticketInfo);
@@ -13,25 +20,16 @@ const MainCard = ({ ticektPromise, progress, setProgress,resolved, setResolved }
     setTickets(fileteredCards);
   };
 
-  
   const handleTask = (taskish) => {
     removeCard(taskish);
     const taskData = selectedCard.filter((card) => card.id !== taskish.id);
     setSelectedCard(taskData);
     setTask([...task, taskish]);
-    setProgress(progress -1)
-    setResolved(resolved+1)
+    setProgress(progress - 1);
+    setResolved(resolved + 1);
+    toast("Completed");
   };
-  
 
-
-
-
-  console.log(selectedCard);
-  console.log(task);
-  
-  
-  
   return (
     <div className="flex flex-col-reverse md:flex-row justify-between gap-6 max-w-[1200px] mx-auto mt-20 ">
       {/* left side div */}
@@ -86,12 +84,9 @@ const MainCard = ({ ticektPromise, progress, setProgress,resolved, setResolved }
             </p>
           ) : (
             task.map((cards) => (
-              
               <div className="px-4 py-2 border-2 bg-green-100 font-semibold rounded-2xl my-4 text-left">
                 <h1 className="mb-3 font-semibold">{cards.title}</h1>
-                <p
-                  className=" w-full  text-green-600 font-semibold rounded-2xl"
-                >
+                <p className=" w-full  text-green-600 font-semibold rounded-2xl">
                   Completed
                 </p>
               </div>
